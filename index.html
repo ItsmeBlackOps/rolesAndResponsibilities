@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Silverspace SOP: Roles & Responsibilities</title>
+  <style>
+    /* —— Silverspace Color Palette —— */
+    :root {
+      --bg: #0b0c10;            /* deep-space black */
+      --card: #1f2833;          /* steel-grey */
+      --primary: #45a29e;       /* neon-cyan */
+      --accent: #c3073f;        /* neon-magenta */
+      --text: #c5c6c7;          /* light silver */
+      --h-font: 'Segoe UI', Tahoma, sans-serif;
+      --b-font: 'Arial', sans-serif;
+    }
+
+    /* —— Reset & Base —— */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--b-font);
+      line-height: 1.6;
+      padding: 40px;
+    }
+
+    /* —— Container & Header —— */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+    header {
+      background: linear-gradient(270deg, var(--primary), var(--accent));
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: var(--bg);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-family: var(--h-font);
+      font-size: 2.5rem;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* —— Warning Banner —— */
+    .warning {
+      background: #581845;
+      color: #f8f8f8;
+      padding: 20px;
+      border-left: 6px solid var(--accent);
+      font-family: var(--h-font);
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* —— Section Cards —— */
+    section {
+      padding: 30px 40px;
+      border-bottom: 1px solid #21252b;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    section:nth-of-type(1) { animation-delay: 0.5s; }
+    section:nth-of-type(2) { animation-delay: 0.7s; }
+    section:nth-of-type(3) { animation-delay: 0.9s; }
+    section:nth-of-type(4) { animation-delay: 1.1s; }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-family: var(--h-font);
+      color: var(--primary);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 14px;
+      transition: transform 0.3s ease;
+    }
+    li::before {
+      content: '✔️';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    li:hover {
+      transform: translateX(6px);
+    }
+    li:hover::before {
+      animation: bounce 0.5s;
+    }
+
+    /* —— Accountability Badge —— */
+    .accountable {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    /* —— Keyframe Animations —— */
+    @keyframes gradientBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes fadeInUp {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Silverspace SOP: Roles &amp; Responsibilities</h1>
+    </header>
+
+    <div class="warning">
+      ⚠️ <strong>Accountability Warning:</strong> Any deviation from this checklist—especially missing MANDATORY items—makes the expert fully responsible if a complaint arises.
+    </div>
+
+    <section>
+      <h2>Expert</h2>
+      <ul>
+        <li>Create end-to-end project docs, conduct prep calls, draft breakdowns &amp; storylines, schedule mocks (Resume Understanding).</li>
+        <li>Acknowledge support requests immediately, manage 30-20-10 check-ins, live-update answers, share support docs (Screening).</li>
+        <li>Guide technical/final round answers naturally, verify audio/screen share, explain algorithms &amp; complexities, log examples (Final Round).</li>
+        <li>Set up assessments, obtain access, record sessions, comment on syntax &amp; share real-time feedback (Assessment Support).</li>
+        <li>Respond to emails, create invites with proper CCs, attach templates, and close tickets with full notes (Email/Calendar).</li>
+        <li class="accountable">Failure Accountability: Expert is responsible for any SOP deviations in their own tasks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Team Lead</h2>
+      <ul>
+        <li>Manage Experts: audit their SOP adherence at every phase and coach them on mandatory/optional checklist items.</li>
+        <li>Provide Experts with templates, assets &amp; cheat-sheets; ensure all “Before/During/After” tasks appear in shared Google Docs.</li>
+        <li>Monitor Experts’ KPIs, flag delays or missing actions, and escalate deviations to the Assistant Manager.</li>
+        <li>Consolidate session logs &amp; recordings; initiate Root Cause Analysis on any SOP breach.</li>
+        <li>Track candidate comfort &amp; document quality; approve final docs before sharing with candidates.</li>
+        <li class="accountable">Failure Accountability: Team Lead is responsible for any oversight or coaching failures.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Assistant Manager</h2>
+      <ul>
+        <li>Manage Team Leads: review audits, verify escalations, and ping for non-compliance within defined SLAs.</li>
+        <li>Produce daily/weekly/monthly KPI reports on Expert &amp; Team Lead performance, SOP adherence, and outcomes.</li>
+        <li>Lead Root Cause Analysis workshops with Team Leads; define corrective actions and update process docs.</li>
+        <li>Oversee interview scheduling: send acknowledgments, calendar invites, and distribute SOP checklists.</li>
+        <li>Maintain &amp; curate the Template Drop Zone: Doc templates, Q&amp;A sheets, behavior guides, and feedback formats.</li>
+        <li class="accountable">Failure Accountability: Assistant Manager is responsible for missed escalations or reporting gaps.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Manager</h2>
+      <ul>
+        <li>Define &amp; refine KPIs measuring compliance and performance at every level: Expert, Team Lead, Assistant Manager.</li>
+        <li>Assign Experts, Team Leads &amp; Assistant Manager based on expertise, workload, and candidate volume.</li>
+        <li>Enforce Zero-Tolerance Policy: track infractions, issue warnings, and escalate or remove non-compliant participants.</li>
+        <li>Review escalations from the Assistant Manager; ensure fairness and consistency in applying consequences.</li>
+        <li>Audit &amp; update the master SOP annually (or as needed); communicate changes and train the team.</li>
+        <li class="accountable">Failure Accountability: Manager holds overall responsibility for any systemic or policy-level failures.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
